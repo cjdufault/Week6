@@ -24,7 +24,7 @@ namespace ToDoList
             if (!String.IsNullOrWhiteSpace(newToDo)){ // do nothing if field is empty
                 if (ItemExists(newToDo))
                 {
-                    MessageBox.Show("Item already exists");
+                    MessageBox.Show("Item already exists", "Error");
                     txtNewToDo.Clear();
                 }
                 else
@@ -57,14 +57,12 @@ namespace ToDoList
         // tests if an item is already in clsToDo.Items, regardless of case
         private bool ItemExists(string testItem)
         {
-            string testItemLower = testItem.ToLower();
             bool exists = false;
             
             // compare each item to testItem, set exists to true and break if one does
             foreach(string compareItem in clsToDo.Items)
             {
-                string compareItemLower = compareItem.ToLower();
-                if (testItemLower.Equals(compareItemLower))
+                if (testItem.Equals(compareItem, StringComparison.OrdinalIgnoreCase))
                 {
                     exists = true;
                     break;
