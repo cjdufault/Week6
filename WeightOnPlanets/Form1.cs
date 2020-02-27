@@ -12,9 +12,15 @@ namespace Lab5
 {
     public partial class Form1 : Form
     {
+        SortedList<string, double> WeightConversionFactors = new SortedList<string, double>();
+
         public Form1()
         {
             InitializeComponent();
+
+            WeightConversionFactors.Add("Mercury", 0.3772);
+            WeightConversionFactors.Add("Venus", 0.9042);
+            WeightConversionFactors.Add("Mars", 0.3783);
         }
 
         private void btnCalc_Click(object sender, EventArgs e)
@@ -33,8 +39,14 @@ namespace Lab5
                 return;
             }
             
-            double convertFactor = .377;
-            double marsWeight = earthWeight * convertFactor;
+            // calculate the weights
+            double mercuryWeight = earthWeight * WeightConversionFactors["Mercury"];
+            double venusWeight = earthWeight * WeightConversionFactors["Venus"];
+            double marsWeight = earthWeight * WeightConversionFactors["Mars"];
+
+            // display the weights
+            txtMercuryWeight.Text = String.Format("{0} weighs {1} on Mercury", objectName, mercuryWeight);
+            txtVenusWeight.Text = String.Format("{0} weighs {1} on Venus", objectName, venusWeight);
             txtMarsWeight.Text = String.Format("{0} weighs {1} on Mars", objectName, marsWeight);
         }
 
@@ -86,6 +98,16 @@ namespace Lab5
             }
 
             return true;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList", "ToDoList\ToDoLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{98EEF91B-D172-44C1-BD3E-B8E5449388C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightOnMars", "WeightOnMars\WeightOnMars.csproj", "{186D6629-8C61-4E08-93CB-29CFF1FCB69B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeightOnPlanets", "WeightOnPlanets\WeightOnPlanets.csproj", "{186D6629-8C61-4E08-93CB-29CFF1FCB69B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
